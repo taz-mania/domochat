@@ -36,6 +36,8 @@ gem 'devise'
 
 gem "pundit"
 
+gem "rolify"
+
 gem "twitter-bootstrap-rails"
 
 gem 'simple_form'
