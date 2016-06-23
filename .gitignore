@@ -15,10 +15,8 @@
 .idea/
 *.iml
 .DS_Store
-<<<<<<< HEAD
+
 config/database.yml
 
-=======
-
-/config/database.yml
->>>>>>> 238df681bd09c5d468b8e14868c012e5eee3f3d6
+# Ignore application configuration
+/config/application.yml
