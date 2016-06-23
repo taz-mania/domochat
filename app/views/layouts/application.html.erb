@@ -58,7 +58,7 @@
                 <li><a href="#">Account</a></li>
                 <li><a href="#">Preferences</a></li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to "Sing Out", destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
           </ul>
@@ -67,7 +67,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
-            <li><%= link_to "Sing In", new_user_session_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
           </ul>
 
           <% end %>
