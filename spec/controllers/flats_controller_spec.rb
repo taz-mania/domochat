@@ -24,11 +24,11 @@ RSpec.describe FlatsController, type: :controller do
   # Flat. As you add validations to Flat, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {number: 1, floor: 1, entrance: 1}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {number: nil, floor: nil, entrance: nil}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +103,17 @@ RSpec.describe FlatsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {number: 3, floor: 4, entrance: 2}
       }
 
       it "updates the requested flat" do
         flat = Flat.create! valid_attributes
         put :update, {:id => flat.to_param, :flat => new_attributes}, valid_session
         flat.reload
-        skip("Add assertions for updated state")
+        expect(flat.number).to eq(3)
+        expect(flat.floor).to eq(4)
+        expect(flat.entrance).to eq(2)
+
       end
 
       it "assigns the requested flat as @flat" do
