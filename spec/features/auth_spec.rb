@@ -98,7 +98,3 @@ describe "Other" do
   end
 end
 end
-
-
-# отдельно посмотреть интеграцию rspec и devise
-# интеграция rspec и omniauth
