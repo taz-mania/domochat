@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'profile/show'
+
+  get 'profile/edit'
+
   resources :flats
+  resources :posts
   root 'welcome#index'
 
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
