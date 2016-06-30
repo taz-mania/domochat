@@ -16,7 +16,9 @@
 *.iml
 .DS_Store
 
-config/database.yml
-
 # Ignore application configuration
+/config/database.yml
 /config/application.yml
+/config/secrets.yml
+
+psql_launch.md
