@@ -140,6 +140,7 @@ GEM
     pg (0.18.4)
     pg (0.18.4-x86-mingw32)
     pkg-config (1.1.7)
+    puma (3.4.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (1.6.4)
@@ -220,8 +221,9 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    turbolinks (2.5.3)
-      coffee-rails
+    turbolinks (5.0.0)
+      turbolinks-source (~> 5)
+    turbolinks-source (5.0.0)
     twitter-bootstrap-rails (3.2.2)
       actionpack (>= 3.1)
       execjs (>= 2.2.2, >= 2.2)
@@ -262,6 +264,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   pg (~> 0.15)
+  puma
   pundit
   rails (= 4.2.6)
   rolify
