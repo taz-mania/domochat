@@ -92,7 +92,9 @@ describe "Other" do
     fill_in "Password", :with => "qwerty"
     page.check('Remember me')
     click_button 'Log in'
-    expect(user.remember_created_at).to eq(DateTime.now)
+    user = User.find(user.id)
+    expect(user.remember_created_at).to_not eq nil
+
     #expect(user.remember_me).to eq(1)
     #expect(page).to have_content('Signed in successfully.')
   end
