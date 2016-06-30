@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @flat.number %>
+</p>
+
+<p>
+  <strong>Floor:</strong>
+  <%= @flat.floor %>
+</p>
+
+<p>
+  <strong>Entrance:</strong>
+  <%= @flat.entrance %>
+</p>
+
+<%= link_to 'Edit', edit_flat_path(@flat) %> |
+<%= link_to 'Back', flats_path %>
