@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
+  after_create :create_profile
+
   has_many :identities, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
   TEMP_EMAIL_PREFIX = 'dc@user'
   TEMP_EMAIL_REGEX = /\Adc@user/
@@ -57,5 +60,9 @@ class User < ActiveRecord::Base
 
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
+  end
+
+  def create_profile
+    Profile.create(user: self)
   end
 end
