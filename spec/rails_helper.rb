@@ -54,11 +54,10 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
+  config.include RequestHelpers, :type => :request
+
   config.include Devise::TestHelpers, type: :controller
   config.include Devise::TestHelpers, type: :view
-
-  config.include OmniauthMacros
-  config.include Warden::Test::ControllerHelpers, type: :controller
 
   config.include FactoryGirl::Syntax::Methods
   config.include Capybara::DSL
