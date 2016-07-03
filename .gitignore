@@ -22,3 +22,5 @@
 /config/secrets.yml
 
 psql_launch.md
+
+/config/email.yml
