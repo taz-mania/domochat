@@ -25,7 +25,7 @@ development:
   <<: *default
   database: domochat_development
   username: postgres
-  password: 123
+  password: psycho0social9
   host: <%= ENV['IP'] %>
 
   # The specified database role being used to connect to postgres.
@@ -62,7 +62,7 @@ test:
   <<: *default
   database: domochat_test
   username: postgres
-  password: 123
+  password: psycho0social9
   host: <%= ENV['IP'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
