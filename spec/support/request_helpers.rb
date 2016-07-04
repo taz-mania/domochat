@@ -1,5 +1,4 @@
 include Warden::Test::Helpers 
-include Devise::TestHelpers
 
 module RequestHelpers
 
