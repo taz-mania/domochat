@@ -14,7 +14,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -41,4 +41,44 @@ Rails.application.configure do
 
   # Needed by Devise gem
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Configure mailer for sending emails.
+  # Remember to add /config/email.yml file with settings for your email account
+  config.action_mailer.perform_deliveries = true
+
+  # Configuration for YANDEX
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.yandex.ru',
+    domain: 'yandex.ru',
+    port: 465,
+    user_name: ENV["YANDEX_USER"],
+    password: ENV["YANDEX_PASS"],
+    authentication: 'plain',
+    tls: true
+  }
+
+  # Configuration for GMAIL
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.gmail.com',
+  #   domain: 'mail.google.com',
+  #   port: 587,
+  #   user_name: ENV["GMAIL_USER"],
+  #   password: ENV["GMAIL_PASS"],
+  #   authentication: 'plain',
+  #   enable_starttls_auto: true
+  # }
+
+  # SMTP settings for mailgun
+  # ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => 587,
+  #   :address        => "smtp.mailgun.org",
+  #   :domain         => ENV['MAILGUN_DOMAIN'],
+  #   :user_name      => ENV['MAILGUN_LOGIN'],
+  #   :password       => ENV['MAILGUN_PASS'],
+  #   :authentication => :plain,
+  # }
+
 end
