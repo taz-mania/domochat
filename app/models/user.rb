@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   after_create :create_profile
 
   has_many :identities, dependent: :destroy
+  has_many :emails, dependent: :destroy
   has_one :profile, dependent: :destroy
 
   TEMP_EMAIL_PREFIX = 'dc@user'
@@ -45,7 +46,7 @@ class User < ActiveRecord::Base
           password: Devise.friendly_token[0,20]
         )
         #в оригинале было user.skip_confirmation!
-        user.skip_confirmation! if user.respond_to?(:skip_confirmation)      
+        user.skip_confirmation! if user.respond_to?(:skip_confirmation)
         user.save!
       end
     end

@@ -14,7 +14,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -41,4 +41,21 @@ Rails.application.configure do
 
   # Needed by Devise gem
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Configure mailer for sending emails.
+  # Remember to add /config/email.yml file with settings for your email account
+  config.action_mailer.perform_deliveries = true
+
+
+  # SMTP settings for mailgun
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :port           => 587,
+    :address        => "smtp.mailgun.org",
+    :domain         => ENV['mailgun_domain'],
+    :user_name      => ENV['mailgun_login'],
+    :password       => ENV['mailgun_password'],
+    :authentication => :plain,
+  }
+
 end
