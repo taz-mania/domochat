@@ -49,4 +49,14 @@ Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:faceb
   def login_with_omniauth(service)
     visit "/users/auth/#{service.to_s}"
   end
+
+  def fb_user_data(oauth_user)
+    @oauth_user = oauth_user
+    @identity = Identity.where(:provider => @oauth_user.provider, :uid => @oauth_user.uid).first
+    @user = User.where(:id => @identity.user).first
+  end
+
+  def email_analyzer(email)
+    email =~ /\Adc@user/ ? true : false
+  end
 end
