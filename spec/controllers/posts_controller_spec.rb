@@ -24,11 +24,12 @@ RSpec.describe PostsController, :type => :controller do
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {title: FFaker::Lorem.sentence, body: FFaker::Lorem.paragraph(3),
+     author: User.find(1), is_pinned: true, is_draft: false, comments_count: Faker::Number.between(0, 10)}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { title: '', body: '', author: nil, is_pinned: 2, is_draft: 3, comments_count: 'Text' }
   }
 
   # This should return the minimal set of values that should be in the session

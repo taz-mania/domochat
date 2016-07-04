@@ -24,15 +24,9 @@ default: &default
 development:
   <<: *default
   database: domochat_development
-<<<<<<< HEAD
   username: tazmania
   password: admin
   host: localhost
-=======
-#  username: postgres
-#  password: 123
-#  host: <%= ENV['IP'] %>
->>>>>>> fb707a6f351c55feb75207976a8cba2564a9e019
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -67,15 +61,9 @@ development:
 test:
   <<: *default
   database: domochat_test
-<<<<<<< HEAD
   username: tazmania
   password: admin
   host: localhost
-=======
-#  username: postgres
-#  password: 123
-#  host: <%= ENV['IP'] %>
->>>>>>> fb707a6f351c55feb75207976a8cba2564a9e019
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
