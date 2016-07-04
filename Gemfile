@@ -48,6 +48,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'capybara'
+
+  gem 'pry-rails'
 end
 
 group :development do
